@@ -36,11 +36,11 @@ After talking with a domain expert working on a Phd. in molecular biology, the s
 
 The realization that each value in the variation field carries more information than just a single class representation seems important for this task. If we look at a randomly selected variant, say `V1075Yfs*2`, we can break that down into:
 
-V = Valine
-1075 = position in gene
-Y = Tyrosine
-fs = frame shift
-*2 = reference of frame shift
+- V = Valine
+- 1075 = position in gene
+- Y = Tyrosine
+- fs = frame shift
+- *2 = reference of frame shift
 
 Furthermore, [each amino acid has properties] (https://en.wikipedia.org/wiki/Amino_acid) we can include:
 
@@ -49,8 +49,9 @@ Tyrosine = aromatic, polar, neutral charge
 
 Given this information, a non-trivial amount of time was spent programmatically feature-engineering the values of `Variation`. Each element of the protein-level mutation was broken down into components and added as a one-hot-encoded feature. Additional properties for each amino acid were also included, with different values for before and after the mutational change. 
 
-The EDA reveals some of the complications of this process, but since most observations of the variation fit the standard nomenclature, this seemed like a reasonable expenditure of time. Unfortunately at the time of this final update, including the results of the feature engineering only made overall model performance worse.
+The EDA reveals some of the complications of this process, but since most observations of the variation fit the standard nomenclature, this seemed like a reasonable expenditure of time. Unfortunately at the time of this final update, including the results of the feature engineering only made overall model performance worse. 
 
+This approach is documented in the notebook `Hypothesis_1.ipynb`. 
 
 
 
