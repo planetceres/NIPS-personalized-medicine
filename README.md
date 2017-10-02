@@ -30,9 +30,9 @@ Predict the effect of Genetic Variants to enable Personalized Medicine
 
 **Results and Discussion**
 
-Early results submitted to Kaggle with a multiclass log-loss score of `0.82386` have been difficult to match with other strategies and model optimizations. 
+Early results submitted to Kaggle with a multiclass log-loss score of `0.82386` have been difficult to match with other strategies and model optimizations.
 
-After talking with a domain expert working on a Phd. in molecular biology, the strategy for improving model results was refocused on the information carried in the `Variation` variables themselves. Amino acid changes are coded according to a set of [guidelines] (http://www.hgvs.org/mutnomen/codon.html) and different types of protein mutations are more likely to result in certain types of outcomes. Different amino acids also carry different properties of phosphorylation and charge which are meaningful to protein function. So, for example, it is probably important if the amino-acid change was to or from a threonine (Thr, T), serine (Ser, S), or tyrosine (Tyr, Y) as these could have more likelihood of loss or gain of function (which is broadly the definition of the dependent variable in our classification). 
+After talking with a domain expert in molecular biology, the strategy for improving model results was refocused on the information carried in the `Variation` variables themselves. Amino acid changes are coded according to a set of [guidelines] (http://www.hgvs.org/mutnomen/codon.html) and different types of protein mutations are more likely to result in certain types of outcomes. Different amino acids also carry different properties of phosphorylation and charge which are meaningful to protein function. So, for example, it is probably important if the amino-acid change was to or from a threonine (Thr, T), serine (Ser, S), or tyrosine (Tyr, Y) as these could have more likelihood of loss or gain of function (which is broadly the definition of the dependent variable in our classification).
 
 The realization that each value in the variation field carries more information than just a single class representation seems important for this task. If we look at a randomly selected variant, say `V1075Yfs*2`, we can break that down into:
 
@@ -40,18 +40,18 @@ The realization that each value in the variation field carries more information 
 - 1075 = position in gene
 - Y = Tyrosine
 - fs = frame shift
-- *2 = reference of frame shift
+- \*2 = reference of frame shift
 
 Furthermore, [each amino acid has properties] (https://en.wikipedia.org/wiki/Amino_acid) we can include:
 
 Valine = aliphatic, nonpolar, neutral charge
 Tyrosine = aromatic, polar, neutral charge
 
-Given this information, a non-trivial amount of time was spent programmatically feature-engineering the values of `Variation`. Each element of the protein-level mutation was broken down into components and added as a one-hot-encoded feature. Additional properties for each amino acid were also included, with different values for before and after the mutational change. 
+Given this information, a non-trivial amount of time was spent programmatically feature-engineering the values of `Variation`. Each element of the protein-level mutation was broken down into components and added as a one-hot-encoded feature. Additional properties for each amino acid were also included, with different values for before and after the mutational change.
 
-The EDA reveals some of the complications of this process, but since most observations of the variation fit the standard nomenclature, this seemed like a reasonable expenditure of time. Unfortunately at the time of this final update, including the results of the feature engineering only made overall model performance worse. 
+The EDA reveals some of the complications of this process, but since most observations of the variation fit the standard nomenclature, this seemed like a reasonable expenditure of time. Unfortunately at the time of this final update, including the results of the feature engineering only made overall model performance worse.
 
-This approach is documented in the notebook `Hypothesis_1.ipynb`. 
+This approach is documented in the notebook `Hypothesis_1.ipynb`.
 
 
 
@@ -80,13 +80,3 @@ The current submission score on Kaggle's leaderboard using this model is `0.8238
 - Learned embeddings using neural network architecture.
 - CNN-LSTM network as a way to identify patterns beyond bi-grams
 - Improved latent representations of text data
-
-
-### Update 07.12.2017
-Added basic tfidf with neural network classifier. So far only an accuracy on the test data of “0.3234”.
-
-TODO:
-
-- eda
-- model exploration
-- metrics
