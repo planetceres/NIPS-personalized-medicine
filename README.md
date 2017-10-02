@@ -1,4 +1,4 @@
-# W207 Final Project
+# Kaggle Competition - Personalized Medicine: Redefining Cancer Treatment
 
 Kaggle: [Personalized Medicine: Redefining Cancer Treatment] (https://www.kaggle.com/c/msk-redefining-cancer-treatment)
 
