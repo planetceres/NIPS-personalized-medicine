@@ -1,5 +1,7 @@
-# Kaggle Competition - Personalized Medicine: Redefining Cancer Treatment
+# NIPS Competition - Classifying Clinically Actionable Genetic Mutations
+### Personalized Medicine: Redefining Cancer Treatment
 
+NIPS: [NIPS 2017 Competition Track](https://nips.cc/Conferences/2017/CompetitionTrack)
 Kaggle: [Personalized Medicine: Redefining Cancer Treatment] (https://www.kaggle.com/c/msk-redefining-cancer-treatment)
 
 Predict the effect of Genetic Variants to enable Personalized Medicine
